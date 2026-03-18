@@ -1,0 +1,38 @@
+{
+  "Pascal-Case Class": {
+    "prefix": "dclass",
+    "body": [
+      "export class ${TM_FILENAME_BASE/[-_]([a-zA-Z])/${1:/upcase}/g} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Insert a class named from the current filename (kebab/snake → PascalCase)"
+  },
+  "Pascal-Case Interface": {
+    "prefix": "diface",
+    "body": [
+      "export interface ${TM_FILENAME_BASE/[-_]([a-zA-Z])/${1:/upcase}/g} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Insert an interface named from the current filename (kebab/snake → PascalCase)"
+  },
+  "Pascal-Case Abstract Class": {
+    "prefix": "dabstract",
+    "body": [
+      "export abstract class ${TM_FILENAME_BASE/[-_]([a-zA-Z])/${1:/upcase}/g} {",
+      "\tabstract $0(): void;",
+      "}"
+    ],
+    "description": "Insert an abstract class named from the current filename (kebab/snake → PascalCase)"
+  },
+  "Pascal-Case Enum": {
+    "prefix": "denum",
+    "body": [
+      "export enum ${TM_FILENAME_BASE/[-_]([a-zA-Z])/${1:/upcase}/g} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Insert an enum named from the current filename (kebab/snake → PascalCase)"
+  }
+}

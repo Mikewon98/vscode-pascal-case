@@ -1,0 +1,155 @@
+{
+  "name": "pascal-case-class-naming",
+  "displayName": "Pascal-Case Class Naming",
+  "description": "Auto-generates class templates from filenames (kebab-case & snake_case → PascalCase), just like Dart/Flutter.",
+  "version": "1.0.0",
+  "publisher": "Michael Wondwossen",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "categories": [
+    "Snippets",
+    "Other"
+  ],
+  "keywords": [
+    "class",
+    "typescript",
+    "javascript",
+    "pascal",
+    "naming",
+    "snippet"
+  ],
+  "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:javascript",
+    "onLanguage:typescriptreact",
+    "onLanguage:javascriptreact"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "pascalCaseClassNaming.insertClass",
+        "title": "Insert Class from Filename",
+        "category": "Pascal-Case"
+      },
+      {
+        "command": "pascalCaseClassNaming.insertInterface",
+        "title": "Insert Interface from Filename",
+        "category": "Pascal-Case"
+      },
+      {
+        "command": "pascalCaseClassNaming.insertAbstractClass",
+        "title": "Insert Abstract Class from Filename",
+        "category": "Pascal-Case"
+      },
+      {
+        "command": "pascalCaseClassNaming.insertEnum",
+        "title": "Insert Enum from Filename",
+        "category": "Pascal-Case"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "pascalCaseClassNaming.submenu",
+          "group": "1_modification@1",
+          "when": "editorLangId =~ /^(typescript|javascript|typescriptreact|javascriptreact)$/ && editorIsOpen"
+        }
+      ],
+      "pascalCaseClassNaming.submenu": [
+        {
+          "command": "pascalCaseClassNaming.insertClass",
+          "group": "1@1"
+        },
+        {
+          "command": "pascalCaseClassNaming.insertInterface",
+          "group": "1@2"
+        },
+        {
+          "command": "pascalCaseClassNaming.insertAbstractClass",
+          "group": "1@3"
+        },
+        {
+          "command": "pascalCaseClassNaming.insertEnum",
+          "group": "1@4"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "pascalCaseClassNaming.submenu",
+        "label": "$(symbol-class) Insert from Filename"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/typescript.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/typescript.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/javascript.json"
+      }
+    ],
+    "configuration": {
+      "title": "Pascal-Case Class Naming",
+      "properties": {
+        "pascalCaseClassNaming.autoInsertOnNewFile": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically insert a class template when a new TS/JS file is created."
+        },
+        "pascalCaseClassNaming.defaultTemplate": {
+          "type": "string",
+          "enum": [
+            "class",
+            "interface",
+            "abstractClass",
+            "none"
+          ],
+          "default": "class",
+          "description": "The default template to insert when a new file is created."
+        },
+        "pascalCaseClassNaming.addConstructor": {
+          "type": "boolean",
+          "default": false,
+          "description": "Include a constructor in the generated class template."
+        },
+        "pascalCaseClassNaming.exportByDefault": {
+          "type": "boolean",
+          "default": true,
+          "description": "Prefix generated templates with 'export'."
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "pascalCaseClassNaming.insertClass",
+        "key": "ctrl+shift+alt+c",
+        "mac": "cmd+shift+alt+c",
+        "when": "editorLangId =~ /^(typescript|javascript|typescriptreact|javascriptreact)$/"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/vscode": "^1.107.0",
+    "@vscode/vsce": "^3.3.2",
+    "typescript": "^5.8.2"
+  }
+}
