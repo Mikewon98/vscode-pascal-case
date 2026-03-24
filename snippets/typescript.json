@@ -2,7 +2,7 @@
   "Pascal-Case Class": {
     "prefix": "dclass",
     "body": [
-      "export class ${TM_FILENAME_BASE/[-_]([a-zA-Z])/${1:/upcase}/g} {",
+      "export class ${TM_FILENAME_BASE/(^|[-_])([a-zA-Z])/${2:/upcase}/g} {",
       "\t$0",
       "}"
     ],
@@ -11,7 +11,7 @@
   "Pascal-Case Interface": {
     "prefix": "diface",
     "body": [
-      "export interface ${TM_FILENAME_BASE/[-_]([a-zA-Z])/${1:/upcase}/g} {",
+      "export interface ${TM_FILENAME_BASE/(^|[-_])([a-zA-Z])/${2:/upcase}/g} {",
       "\t$0",
       "}"
     ],
@@ -20,7 +20,7 @@
   "Pascal-Case Abstract Class": {
     "prefix": "dabstract",
     "body": [
-      "export abstract class ${TM_FILENAME_BASE/[-_]([a-zA-Z])/${1:/upcase}/g} {",
+      "export abstract class ${TM_FILENAME_BASE/(^|[-_])([a-zA-Z])/${2:/upcase}/g} {",
       "\tabstract $0(): void;",
       "}"
     ],
@@ -29,7 +29,7 @@
   "Pascal-Case Enum": {
     "prefix": "denum",
     "body": [
-      "export enum ${TM_FILENAME_BASE/[-_]([a-zA-Z])/${1:/upcase}/g} {",
+      "export enum ${TM_FILENAME_BASE/(^|[-_])([a-zA-Z])/${2:/upcase}/g} {",
       "\t$0",
       "}"
     ],

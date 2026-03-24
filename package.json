@@ -1,9 +1,17 @@
 {
   "name": "pascal-case-class-naming",
   "displayName": "Pascal-Case Class Naming",
-  "description": "Auto-generates class templates from filenames (kebab-case & snake_case → PascalCase), just like Dart/Flutter.",
+  "description": "Auto-generates class templates from filenames (kebab-case & snake_case → PascalCase).",
   "version": "1.0.0",
-  "publisher": "Michael Wondwossen",
+  "publisher": "MichaelWondwossen",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikewon98/vscode-pascal-case.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mikewon98/vscode-pascal-case/issues"
+  },
+  "homepage": "https://github.com/mikewon98/vscode-pascal-case#readme",
   "engines": {
     "vscode": "^1.107.0"
   },

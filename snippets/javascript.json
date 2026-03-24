@@ -2,7 +2,7 @@
   "Pascal-Case Class": {
     "prefix": "dclass",
     "body": [
-      "export class ${TM_FILENAME_BASE/[-_]([a-zA-Z])/${1:/upcase}/g} {",
+      "export class ${TM_FILENAME_BASE/(^|[-_])([a-zA-Z])/${2:/upcase}/g} {",
       "\t$0",
       "}"
     ],
@@ -12,7 +12,7 @@
     "prefix": "denum",
     "body": [
       "/** @enum {string} */",
-      "export const ${TM_FILENAME_BASE/[-_]([a-zA-Z])/${1:/upcase}/g} = Object.freeze({",
+      "export const ${TM_FILENAME_BASE/(^|[-_])([a-zA-Z])/${2:/upcase}/g} = Object.freeze({",
       "\t$0",
       "});"
     ],

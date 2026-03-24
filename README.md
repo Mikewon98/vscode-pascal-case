@@ -19,15 +19,15 @@ Both **kebab-case** (`-`) and **snake_case** (`_`) are supported — and they ca
 
 ## Features
 
-| Feature                       | Description                                                  |
-| ----------------------------- | ------------------------------------------------------------ |
-| 🚀 Auto-insert on new file    | Opens an empty `.ts`/`.js` file? Class is inserted instantly |
-| 🔤 kebab + snake → PascalCase | Handles `-`, `_`, `.` separators and mixed forms             |
-| 🧩 4 template types           | `class`, `interface`, `abstract class`, `enum`               |
-| ⌨️ Keyboard shortcut          | `Ctrl+Shift+Alt+C` (Cmd on Mac)                              |
-| 🖱️ Right-click context menu   | "Insert from Filename" submenu in the editor                 |
-| ✂️ Snippets                   | `dclass`, `diface`, `dabstract`, `denum`                     |
-| ⚙️ Configurable               | Export prefix, constructor, default template, on/off toggle  |
+| Feature                    | Description                                                  |
+| -------------------------- | ------------------------------------------------------------ |
+| Auto-insert on new file    | Opens an empty `.ts`/`.js` file? Class is inserted instantly |
+| kebab + snake → PascalCase | Handles `-`, `_`, `.` separators and mixed forms             |
+| 4 template types           | `class`, `interface`, `abstract class`, `enum`               |
+| Keyboard shortcut          | `Ctrl+Shift+Alt+C` (Cmd on Mac)                              |
+| Right-click context menu   | "Insert from Filename" submenu in the editor                 |
+| Snippets                   | `dclass`, `diface`, `dabstract`, `denum`                     |
+| Configurable               | Export prefix, constructor, default template, on/off toggle  |
 
 ---
 
@@ -205,31 +205,6 @@ export const UserAuthService = Object.freeze({
   // TODO: add UserAuthService values
   EXAMPLE: "EXAMPLE",
 });
-```
-
----
-
-## Installation
-
-### From the `.vsix` file
-
-```bash
-code --install-extension pascal-case-class-naming-1.0.0.vsix
-```
-
-Or in VS Code: **Extensions** → `···` menu → **Install from VSIX…**
-
-### From source
-
-```bash
-git clone <repo>
-cd pascal-case-class-naming
-npm install
-npm run compile
-
-# Package it
-npx vsce package
-code --install-extension pascal-case-class-naming-1.0.0.vsix
 ```
 
 ---
