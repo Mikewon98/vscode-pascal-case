@@ -2,6 +2,7 @@
   "name": "pascal-case-class-naming",
   "displayName": "Pascal-Case Class Naming",
   "description": "Auto-generates class templates from filenames (kebab-case & snake_case → PascalCase).",
+  "icon": "images/extension-icon.png",
   "version": "1.0.0",
   "publisher": "MichaelWondwossen",
   "repository": {
